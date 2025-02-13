@@ -34,26 +34,28 @@ import {
   SquareTerminal,
 } from "lucide-react";
 
-export function Logo() {
 
+
+export function Logo({ height, width, text }) {
   return (
     <SidebarMenu>
       <SidebarMenuItem key={"logo"}>
-        <SidebarMenuButton className={"pt-5 h-full flex items-center gap-2"} asChild>
-          <a href={"/"}>
+        <SidebarMenuButton className="h-full flex items-center gap-2" asChild>
+          <a href="/">
             <Image
-              src={"autopia-logo-notext.svg"}
+              src="autopia-logo-notext.svg"
               alt="logo"
-              height={65}
-              width={65}
+              height={height}
+              width={width}
             />
-            <h1 className="text-2xl font-bold">AUTOPIA</h1>
+            <h1 className={text ? "text-2xl font-bold" : "hidden"}>AUTOPIA</h1>
           </a>
         </SidebarMenuButton>
       </SidebarMenuItem>
     </SidebarMenu>
   );
 }
+
 
 {/* <SidebarMenuItem>
         <div className="pt-5 flex items-center gap-2">
